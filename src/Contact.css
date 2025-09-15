@@ -1,0 +1,560 @@
+/* Contact.css */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7fafc; /* Light gray/white-ish background */
+}
+
+.businesshub__contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.businesshub__contact-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.businesshub__title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1e40af;
+  position: relative;
+  z-index: 2;
+}
+
+.businesshub__main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
+
+.businesshub__pulse-animation {
+  animation: businesshub__pulse 1s ease-in-out;
+}
+
+@keyframes businesshub__pulse {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.businesshub__subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.businesshub__content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.businesshub__info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.businesshub__details-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.businesshub__details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.businesshub__info-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.businesshub__info-row::after {
+  content: '';
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #e2e8f0 20%, #e2e8f0 80%, transparent 100%);
+}
+
+.businesshub__info-row:last-child {
+  margin-bottom: 0;
+}
+
+.businesshub__info-row:last-child::after {
+  display: none;
+}
+
+.businesshub__info-row:hover {
+  transform: translateX(8px);
+}
+
+.businesshub__icon-wrapper {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+  transform: rotate(0deg);
+  transition: all 0.4s ease;
+}
+
+.businesshub__info-row:hover .businesshub__icon-wrapper {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.45);
+}
+
+.businesshub__text-content {
+  flex: 1;
+}
+
+.businesshub__info-label {
+  margin: 0 0 0.75rem 0;
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.025em;
+}
+
+.businesshub__info-value {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.businesshub__direct-link {
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.businesshub__direct-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.businesshub__direct-link:hover {
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+.businesshub__direct-link:hover::after {
+  width: 100%;
+}
+
+.businesshub__phone-link:hover {
+  color: #48bb78;
+}
+
+.businesshub__phone-link:hover::after {
+  background: linear-gradient(90deg, #48bb78, #38a169);
+}
+
+.businesshub__email-link:hover {
+  color: #4299e1;
+}
+
+.businesshub__email-link:hover::after {
+  background: linear-gradient(90deg, #4299e1, #3182ce);
+}
+
+.businesshub__website-link:hover {
+  color: #805ad5;
+}
+
+.businesshub__website-link:hover::after {
+  background: linear-gradient(90deg, #805ad5, #6b46c1);
+}
+
+.businesshub__schedule-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.businesshub__schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.businesshub__schedule-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.businesshub__schedule-header > svg {
+  color: #667eea;
+  margin-right: 1.25rem;
+  animation: businesshub__clockTick 2s ease-in-out infinite;
+}
+
+@keyframes businesshub__clockTick {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+.businesshub__schedule-info {
+  flex: 1;
+}
+
+.businesshub__schedule-title {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.025em;
+}
+
+.businesshub__current-status {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.businesshub__current-status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  transition: left 0.5s ease;
+}
+
+.businesshub__current-status:hover::before {
+  left: 100%;
+}
+
+.businesshub__status-open {
+  background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+  color: #1a202c;
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+.businesshub__status-closed {
+  background: linear-gradient(135deg, #fed7d7, #feb2b2);
+  color: #1a202c;
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+}
+
+.businesshub__hours-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.businesshub__schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(102, 126, 234, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.businesshub__schedule-row:hover {
+  background: rgba(102, 126, 234, 0.12);
+  transform: translateX(5px);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.businesshub__day-label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1.05rem;
+}
+
+.businesshub__time-display {
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.businesshub__closed-schedule {
+  background: rgba(245, 101, 101, 0.05);
+}
+
+.businesshub__closed-schedule:hover {
+  background: rgba(245, 101, 101, 0.1);
+  border-color: rgba(245, 101, 101, 0.2);
+}
+
+.businesshub__closed-time {
+  color: #e53e3e;
+  font-weight: 700;
+}
+
+.businesshub__map-column {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  height: 520px;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.businesshub__map-column:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.3);
+}
+
+.businesshub__map-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.businesshub__map-frame iframe {
+  border-radius: 24px;
+  filter: grayscale(20%) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.businesshub__map-frame:hover iframe {
+  filter: grayscale(0%) contrast(1.2);
+}
+
+.businesshub__map-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.businesshub__location-tag {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.businesshub__location-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.businesshub__location-tag svg {
+  color: #667eea;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.businesshub__location-text {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.025em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .businesshub__contact-wrapper {
+    padding: 1rem;
+  }
+
+  .businesshub__main-title {
+    font-size: 2.8rem;
+  }
+
+  .businesshub__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .businesshub__content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .businesshub__details-card,
+  .businesshub__schedule-card {
+    padding: 2rem;
+  }
+
+  .businesshub__info-row {
+    margin-bottom: 2rem;
+  }
+
+  .businesshub__icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .businesshub__map-column {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .businesshub__contact-wrapper {
+    padding: 0.75rem;
+  }
+
+  .businesshub__main-title {
+    font-size: 2.2rem;
+  }
+
+  .businesshub__subtitle {
+    font-size: 1rem;
+  }
+
+  .businesshub__details-card,
+  .businesshub__schedule-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .businesshub__info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .businesshub__icon-wrapper {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .businesshub__schedule-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .businesshub__map-column {
+    height: 350px;
+  }
+
+  .businesshub__location-tag {
+    padding: 0.75rem 1rem;
+  }
+
+  .businesshub__location-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Enhanced animations and micro-interactions */
+@keyframes businesshub__float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes businesshub__glow {
+  0%, 100% { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); }
+  50% { box-shadow: 0 25px 70px rgba(102, 126, 234, 0.2); }
+}
+
+.businesshub__details-card:hover {
+  animation: businesshub__glow 2s ease-in-out infinite;
+}
+
+.businesshub__schedule-card:hover {
+  animation: businesshub__glow 2s ease-in-out infinite;
+}
+
+/* Smooth loading animation */
+.businesshub__contact-wrapper > * {
+  animation: businesshub__slideIn 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.businesshub__title-section {
+  animation-delay: 0.1s;
+}
+
+.businesshub__content-grid {
+  animation-delay: 0.3s;
+}
+
+@keyframes businesshub__slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

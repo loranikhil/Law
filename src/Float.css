@@ -1,0 +1,279 @@
+/* Floating Actions Container */
+.floating-actions-wrapper {
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+}
+
+.floating-actions-wrapper.floating-actions-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.floating-actions-wrapper.floating-actions-right {
+  right: 20px;
+}
+
+.floating-actions-wrapper.floating-actions-left {
+  left: 20px;
+}
+
+/* Individual Floating Action Buttons */
+.floating-action-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: none;
+  outline: none;
+  color: white;
+  transform: scale(0.9);
+  animation: floatingBounceIn 0.6s ease-out forwards;
+}
+
+.floating-action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.floating-action-btn:active {
+  transform: scale(0.95);
+}
+
+/* WhatsApp Button Styling */
+.floating-whatsapp-btn {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.floating-whatsapp-btn:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+}
+
+/* Call Button Styling */
+.floating-call-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.floating-call-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+}
+
+/* Pulse Animation */
+.floating-pulse-animation {
+  animation: floatingPulseEffect 2s infinite;
+}
+
+@keyframes floatingPulseEffect {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.floating-call-btn.floating-pulse-animation {
+  animation: floatingCallPulseEffect 2s infinite;
+}
+
+@keyframes floatingCallPulseEffect {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+/* Bounce In Animation */
+@keyframes floatingBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Tooltip Styling */
+.floating-btn-tooltip {
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.floating-actions-left .floating-btn-tooltip {
+  right: auto;
+  left: 75px;
+}
+
+.floating-action-btn:hover .floating-btn-tooltip {
+  opacity: 1;
+}
+
+.floating-btn-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-right-color: rgba(0, 0, 0, 0.8);
+}
+
+.floating-actions-left .floating-btn-tooltip::after {
+  left: auto;
+  right: -5px;
+  border-right-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ripple Effect */
+.floating-ripple-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.floating-action-btn:active .floating-ripple-effect {
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-actions-wrapper {
+    bottom: 15px;
+    gap: 12px;
+  }
+  
+  .floating-actions-wrapper.floating-actions-right {
+    right: 15px;
+  }
+  
+  .floating-actions-wrapper.floating-actions-left {
+    left: 15px;
+  }
+  
+  .floating-action-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .floating-btn-tooltip {
+    font-size: 13px;
+    padding: 6px 10px;
+    right: 65px;
+  }
+  
+  .floating-actions-left .floating-btn-tooltip {
+    left: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-actions-wrapper {
+    bottom: 12px;
+    gap: 10px;
+  }
+  
+  .floating-actions-wrapper.floating-actions-right {
+    right: 12px;
+  }
+  
+  .floating-actions-wrapper.floating-actions-left {
+    left: 12px;
+  }
+  
+  .floating-action-btn {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .floating-action-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  }
+  
+  .floating-btn-tooltip {
+    display: none; /* Hide tooltips on very small screens */
+  }
+}
+
+/* High DPI Screen Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .floating-action-btn {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Accessibility Enhancements */
+.floating-action-btn:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-action-btn,
+  .floating-actions-wrapper,
+  .floating-btn-tooltip,
+  .floating-ripple-effect {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .floating-pulse-animation {
+    animation: none !important;
+  }
+}
