@@ -52,27 +52,6 @@ const Footer = () => {
               </p>
             </div>
             
-            {/* <div className="law-footer__social">
-              <h5 className="law-footer__social-title">Follow Us</h5>
-              <div className="law-footer__social-buttons">
-                <button 
-                  className="law-footer__social-btn law-footer__social-btn--instagram"
-                  onClick={() => handleSocialNav('instagram')}
-                  aria-label="Follow us on Instagram"
-                >
-                  <Instagram size={20} />
-                  <span className="law-footer__social-text">Instagram</span>
-                </button>
-                <button 
-                  className="law-footer__social-btn law-footer__social-btn--whatsapp"
-                  onClick={() => handleSocialNav('whatsapp')}
-                  aria-label="Contact us on WhatsApp"
-                >
-                  <MessageCircle size={20} />
-                  <span className="law-footer__social-text">WhatsApp</span>
-                </button>
-              </div>
-            </div> */}
           </div>
 
           {/* Quick Navigation */}
