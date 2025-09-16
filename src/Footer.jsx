@@ -124,7 +124,7 @@ const Footer = () => {
                 </div>
                 <div className="law-footer__contact-content">
                   <span className="law-footer__contact-label">Address</span>
-                  <span className="law-footer__contact-text">Ramohu Law Firm,<br />Hyderabad.</span>
+                  <span className="law-footer__contact-text">Ramoju Law Firm,<br />Hyderabad.</span>
                 </div>
               </div>
               

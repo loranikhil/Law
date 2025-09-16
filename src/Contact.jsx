@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Clock, Mail, Globe } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -13,7 +13,7 @@ const Contact = () => {
   const contactInfo = {
     address: 'Ramoju Law Firm, Opp. Union Bank, X Road, Gajularamaram, Quthbullapur, Hyderabad - 55.',
     phone: '+91 95534 10353', 
-    phone2: '+91 99599 10353',
+    phone2: '+91 9948272818', 
     email: 'ramojulawfirm@gmail.com',
     website: '24/7 (By Appointments)'
   };
@@ -55,6 +55,7 @@ const Contact = () => {
       <div className="businesshub__content-grid">
         <div className="businesshub__info-column">
           <div className="businesshub__details-card">
+            {/* Address */}
             <div className="businesshub__info-row">
               <div className="businesshub__icon-wrapper">
                 <MapPin size={24} />
@@ -65,70 +66,68 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Phone Numbers */}
             <div className="businesshub__info-row">
               <div className="businesshub__icon-wrapper">
                 <Phone size={24} />
               </div>
               <div className="businesshub__text-content">
                 <h4 className="businesshub__info-label">Phone</h4>
-                <a href={`tel:${contactInfo.phone}`} className="businesshub__direct-link businesshub__phone-link">
-                  {contactInfo.phone} 
-                </a>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="businesshub__direct-link businesshub__phone-link"
+                >
+                  {contactInfo.phone}
+                </a> ,
+
+                {/* ✅ Second number (optional) */}
+                {contactInfo.phone2 && (
+                  <a
+                    href={`tel:${contactInfo.phone2}`}
+                    className="businesshub__direct-link businesshub__phone-link"
+                  >
+                    {contactInfo.phone2}
+                  </a>
+                )}
               </div>
             </div>
 
+            {/* Email */}
             <div className="businesshub__info-row">
               <div className="businesshub__icon-wrapper">
                 <Mail size={24} />
               </div>
               <div className="businesshub__text-content">
                 <h4 className="businesshub__info-label">Email</h4>
-                <a href={`mailto:${contactInfo.email}`} className="businesshub__direct-link businesshub__email-link">
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="businesshub__direct-link businesshub__email-link"
+                >
                   {contactInfo.email}
                 </a>
               </div>
             </div>
 
+            {/* Business Hours */}
             <div className="businesshub__info-row">
               <div className="businesshub__icon-wrapper">
                 <Clock size={24} />
               </div>
               <div className="businesshub__text-content">
-                <h4 className="businesshub__info-label">Business Hours </h4>
-                <a className="businesshub__direct-link businesshub__website-link" target="_blank" rel="noopener noreferrer">
+                <h4 className="businesshub__info-label">Business Hours</h4>
+                <a
+                  className="businesshub__direct-link businesshub__website-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {contactInfo.website}
                 </a>
               </div>
             </div>
           </div>
-
-          {/* <div className="businesshub__schedule-card">
-            <div className="businesshub__schedule-header">
-              <Clock size={24} />
-              <div className="businesshub__schedule-info">
-                <h4 className="businesshub__schedule-title">Business Hours</h4>
-                <span className={`businesshub__current-status ${currentStatus.className}`}>
-                  {currentStatus.status}
-                </span>
-              </div>
-            </div>
-            
-            <div className="businesshub__hours-display">
-              {businessHours.map((schedule, index) => (
-                <div 
-                  key={index}
-                  className={`businesshub__schedule-row ${!schedule.isOpen ? 'businesshub__closed-schedule' : ''}`}
-                >
-                  <span className="businesshub__day-label">{schedule.day}</span>
-                  <span className={`businesshub__time-display ${!schedule.isOpen ? 'businesshub__closed-time' : ''}`}>
-                    {schedule.hours}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
 
+        {/* Map Section */}
         <div className="businesshub__map-column">
           <div className="businesshub__map-frame">
             <iframe
@@ -142,13 +141,6 @@ const Contact = () => {
               title="Business Location"
             ></iframe>
           </div>
-          
-          {/* <div className="businesshub__map-badge">
-            <div className="businesshub__location-tag">
-              <MapPin size={20} />
-              <span className="businesshub__location-text">123 Business Street, New York</span>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
