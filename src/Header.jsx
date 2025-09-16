@@ -28,24 +28,31 @@ const Header = () => {
   return (
     <header className={`portfolio-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className={`header-logo ${isMobileMenuOpen ? 'hide-on-mobile-open' : ''}`} onClick={handleNavClick}>
+        {/* Logo */}
+        <div
+          className={`header-logo ${isMobileMenuOpen ? 'hide-on-mobile-open' : ''}`}
+          onClick={handleNavClick}
+        >
           <Scale className="logo-icon" />
           <span className="logo-text">Ramoju Law Firm</span>
         </div>
 
+        {/* Desktop Nav */}
         <nav className="header-navigation desktop-nav">
           <a href="#Home" className="nav-link" onClick={handleNavClick}>Home</a>
           <a href="#About" className="nav-link" onClick={handleNavClick}>About</a>
           <a href="#Services" className="nav-link" onClick={handleNavClick}>Services</a>
           <a href="#About" className="nav-link" onClick={handleNavClick}>Experience</a>
-          <a href="#contact" className="nav-link" onClick={handleNavClick}>Contact</a>
+          <a href="#Contact" className="nav-link" onClick={handleNavClick}>Contact</a>
         </nav>
 
+        {/* Desktop Contact */}
         <div className="header-contact desktop-contact">
           <Phone className="contact-icon" />
           <span className="contact-text">+91 95534 10353</span>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -57,6 +64,7 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Mobile Nav Overlay */}
       <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-nav-content">
           <div className="mobile-nav-header">
@@ -66,14 +74,16 @@ const Header = () => {
             </div>
           </div>
 
+          {/* Mobile Nav */}
           <nav className="mobile-navigation">
-            <a href="#home" className="mobile-nav-link" onClick={handleNavClick}>Home</a>
-            <a href="#about" className="mobile-nav-link" onClick={handleNavClick}>About</a>
-            <a href="#services" className="mobile-nav-link" onClick={handleNavClick}>Services</a>
-            <a href="#experience" className="mobile-nav-link" onClick={handleNavClick}>Experience</a>
-            <a href="#contact" className="mobile-nav-link" onClick={handleNavClick}>Contact</a>
+            <a href="#Home" className="mobile-nav-link" onClick={handleNavClick}>Home</a>
+            <a href="#About" className="mobile-nav-link" onClick={handleNavClick}>About</a>
+            <a href="#Services" className="mobile-nav-link" onClick={handleNavClick}>Services</a>
+            <a href="#About" className="mobile-nav-link" onClick={handleNavClick}>Experience</a>
+            <a href="#Contact" className="mobile-nav-link" onClick={handleNavClick}>Contact</a>
           </nav>
 
+          {/* Mobile Footer */}
           <div className="mobile-nav-footer">
             <div className="mobile-contact-info">
               <div className="mobile-contact-item">
@@ -86,6 +96,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Backdrop */}
       {isMobileMenuOpen && (
         <div
           className="mobile-nav-backdrop"

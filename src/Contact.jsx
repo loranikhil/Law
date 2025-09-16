@@ -46,7 +46,7 @@ const Contact = () => {
   const currentStatus = getCurrentStatus();
 
   return (
-    <div id="contact" className="businesshub__contact-wrapper">
+    <div id="Contact" className="businesshub__contact-wrapper">
       <div className="businesshub__title-section">
         <h2 className={`businesshub__main-title ${animationClass}`}>Contact Us</h2>
         <p className="businesshub__subtitle">Get in touch with our team</p>
